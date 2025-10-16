@@ -12,7 +12,6 @@ global:
       ingress.adminDomain: "admin.{{.Values.projectValues.rootDomain}}"
       ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
       ingress.rootDomain: "{{.Values.projectValues.rootDomain}}"
-      generatePasswords.image.repository: "iits/kubectl generatePasswords.image.tag: 1.32.4"
 charts:
   # Local chart for development purposes
   basic-auth:
