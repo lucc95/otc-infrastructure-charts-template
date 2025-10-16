@@ -9,11 +9,19 @@ defaultDashboard:
   tiles:
     argocd:
       href: "argocd"
+    elasticsearch:
+      enabled: "true"
+      href: "elasticsearch"
+      imgSrc: "elasticsearch.png"
+      imgAlt: "Elasticsearch"
+    kibana:
+      enabled: "true"
+      href: "kibana/app/discover"
+      imgSrc: "definitly_not_kibana.svg"
+      imgAlt: "Kibana"
     grafana:
       enabled: "false"
     prometheus:
-      enabled: "false"
-    elasticsearch:
       enabled: "false"
     vault:
       enabled: "false"
