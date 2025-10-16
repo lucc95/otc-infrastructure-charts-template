@@ -12,11 +12,12 @@ global:
       ingress.adminDomain: "admin.{{.Values.projectValues.rootDomain}}"
       ingress.host: "admin.{{.Values.projectValues.rootDomain}}"
       ingress.rootDomain: "{{.Values.projectValues.rootDomain}}"
+      generatePasswords.image.repository: "iits/kubectl generatePasswords.image.tag: 1.32.4"
 charts:
   # Local chart for development purposes
   basic-auth:
     namespace: routing
-    repoURL: "https://github.com/iits-consulting/otc-infrastructure-charts-template.git" # Replace this with yours!
+    repoURL: "https://github.com/lucc95/otc-infrastructure-charts-template.git" # Replace this with yours!
     targetRevision: "main"
     path: "local-charts/basic-auth"
     parameters:
@@ -26,8 +27,6 @@ charts:
     targetRevision: 1.7.1
     # values files needs to be inside this chart
     valueFile: "value-files/admin-dashboard/values.yaml"
-    parameters:
-      "iits-admin-dashboard.replicaCount": "2"
 
 
   kafka:
@@ -56,6 +55,6 @@ charts:
 
   elastic-operator:
     namespace: monitoring
-    targetRevision: elastic-operator-9.0.5-bitnamilegacy
+    targetRevision: 9.0.5-bitnamilegacy
     parameters:
       ingress.kibana.host: "admin.{{.Values.projectValues.rootDomain}}"
